@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Lead Intake — Ledger CRM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="page">
+  <header class="page__header">
+    <p class="eyebrow">Sales Pipeline / New Record</p>
+    <h1>Lead Intake Form</h1>
+    <p class="page__lede">Capture every detail accurately the first time. Fields marked <span class="required-flag" aria-hidden="true">*</span><span class="sr-only">required</span> are required before this lead can be routed to a rep.</p>
+  </header>
+
+  <form class="lead-form" novalidate aria-describedby="form-instructions">
+    <p id="form-instructions" class="sr-only">Complete all required fields. Errors will be announced and described beneath each field as you type.</p>
+
+    <!-- SECTION 1: CONTACT -->
+    <fieldset class="form-section">
+      <legend>
+        <span class="legend__index">01</span>
+        <span class="legend__text">Contact details</span>
+      </legend>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="firstName">First name <span class="required-flag" aria-hidden="true">*</span></label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            required
+            autocomplete="given-name"
+            aria-describedby="firstName-error"
+            aria-invalid="false">
+          <p id="firstName-error" class="field-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="lastName">Last name <span class="required-flag" aria-hidden="true">*</span></label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            required
+            autocomplete="family-name"
+            aria-describedby="lastName-error"
+            aria-invalid="false">
+          <p id="lastName-error" class="field-error" role="alert"></p>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="email">Work email <span class="required-flag" aria-hidden="true">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="name@company.com"
+            aria-describedby="email-hint email-error"
+            aria-invalid="false">
+          <p id="email-hint" class="field-hint">We'll send routing confirmation here.</p>
+          <p id="email-error" class="field-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            autocomplete="tel"
+            placeholder="(555) 123-4567"
+            pattern="^[0-9\s\-\(\)\+]{7,20}$"
+            aria-describedby="phone-hint phone-error"
+            aria-invalid="false">
+          <p id="phone-hint" class="field-hint">Optional, but speeds up qualification calls.</p>
+          <p id="phone-error" class="field-error" role="alert"></p>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- SECTION 2: COMPANY -->
+    <fieldset class="form-section">
+      <legend>
+        <span class="legend__index">02</span>
+        <span class="legend__text">Company profile</span>
+      </legend>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="company">Company name <span class="required-flag" aria-hidden="true">*</span></label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            required
+            autocomplete="organization"
+            aria-describedby="company-error"
+            aria-invalid="false">
+          <p id="company-error" class="field-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="website">Company website</label>
+          <input
+            type="url"
+            id="website"
+            name="website"
+            autocomplete="url"
+            placeholder="https://example.com"
+            aria-describedby="website-error"
+            aria-invalid="false">
+          <p id="website-error" class="field-error" role="alert"></p>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="companySize">Company size <span class="required-flag" aria-hidden="true">*</span></label>
+          <select id="companySize" name="companySize" required aria-describedby="companySize-error" aria-invalid="false">
+            <option value="" disabled selected>Select a range</option>
+            <option value="1-10">1–10 employees</option>
+            <option value="11-50">11–50 employees</option>
+            <option value="51-200">51–200 employees</option>
+            <option value="201-1000">201–1,000 employees</option>
+            <option value="1000+">1,000+ employees</option>
+          </select>
+          <p id="companySize-error" class="field-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="industry">Industry</label>
+          <select id="industry" name="industry" aria-describedby="industry-error" aria-invalid="false">
+            <option value="" selected>Select an industry</option>
+            <option value="saas">Software / SaaS</option>
+            <option value="finance">Finance &amp; Insurance</option>
+            <option value="healthcare">Healthcare</option>
+            <option value="retail">Retail &amp; eCommerce</option>
+            <option value="manufacturing">Manufacturing</option>
+            <option value="other">Other</option>
+          </select>
+          <p id="industry-error" class="field-error" role="alert"></p>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- SECTION 3: QUALIFICATION -->
+    <fieldset class="form-section">
+      <legend>
+        <span class="legend__index">03</span>
+        <span class="legend__text">Deal qualification</span>
+      </legend>
+
+      <div class="field">
+        <label for="budget">Estimated annual budget</label>
+        <div class="select-wrap">
+          <input
+            type="text"
+            inputmode="numeric"
+            id="budget"
+            name="budget"
+            placeholder="e.g. 25,000"
+            aria-describedby="budget-hint budget-error"
+            aria-invalid="false">
+        </div>
+        <p id="budget-hint" class="field-hint">USD, numbers only.</p>
+        <p id="budget-error" class="field-error" role="alert"></p>
+      </div>
+
+      <fieldset class="field field--radiogroup">
+        <legend>Lead source <span class="required-flag" aria-hidden="true">*</span></legend>
+        <div class="radio-grid" role="radiogroup" aria-describedby="leadSource-error" aria-required="true">
+          <label class="radio-card">
+            <input type="radio" name="leadSource" value="referral" required>
+            <span>Referral</span>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="leadSource" value="website">
+            <span>Website</span>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="leadSource" value="event">
+            <span>Event / Conference</span>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="leadSource" value="cold-outreach">
+            <span>Cold Outreach</span>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="leadSource" value="advertising">
+            <span>Advertising</span>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="leadSource" value="other">
+            <span>Other</span>
+          </label>
+        </div>
+        <p id="leadSource-error" class="field-error" role="alert"></p>
+      </fieldset>
+
+      <fieldset class="field">
+        <legend>Products of interest</legend>
+        <div class="checkbox-grid">
+          <label class="checkbox-card">
+            <input type="checkbox" name="interest" value="platform">
+            <span>Core Platform</span>
+          </label>
+          <label class="checkbox-card">
+            <input type="checkbox" name="interest" value="analytics">
+            <span>Analytics Suite</span>
+          </label>
+          <label class="checkbox-card">
+            <input type="checkbox" name="interest" value="api">
+            <span>API Access</span>
+          </label>
+          <label class="checkbox-card">
+            <input type="checkbox" name="interest" value="support">
+            <span>Premium Support</span>
+          </label>
+        </div>
+        <p class="field-hint">Select all that apply.</p>
+      </fieldset>
+
+      <div class="field">
+        <label for="timeline">Purchase timeline</label>
+        <select id="timeline" name="timeline" aria-describedby="timeline-error" aria-invalid="false">
+          <option value="" selected>Select a timeframe</option>
+          <option value="immediate">Immediate (0–1 month)</option>
+          <option value="short">Short term (1–3 months)</option>
+          <option value="mid">Mid term (3–6 months)</option>
+          <option value="long">Long term (6+ months)</option>
+        </select>
+        <p id="timeline-error" class="field-error" role="alert"></p>
+      </div>
+
+      <div class="field">
+        <label for="notes">Additional notes</label>
+        <textarea
+          id="notes"
+          name="notes"
+          rows="4"
+          maxlength="500"
+          aria-describedby="notes-hint"></textarea>
+        <p id="notes-hint" class="field-hint"><span id="notes-count">0</span>/500 characters</p>
+      </div>
+    </fieldset>
+
+    <!-- SECTION 4: CONSENT -->
+    <fieldset class="form-section form-section--compact">
+      <legend>
+        <span class="legend__index">04</span>
+        <span class="legend__text">Consent</span>
+      </legend>
+
+      <div class="field field--checkbox">
+        <label class="checkbox-line">
+          <input
+            type="checkbox"
+            id="consent"
+            name="consent"
+            required
+            aria-describedby="consent-error"
+            aria-invalid="false">
+          <span>I confirm this contact has agreed to be contacted regarding our products and services. <span class="required-flag" aria-hidden="true">*</span></span>
+        </label>
+        <p id="consent-error" class="field-error" role="alert"></p>
+      </div>
+    </fieldset>
+
+    <div class="form-actions">
+      <p class="form-status" role="status" aria-live="polite" id="form-status"></p>
+      <button type="button" class="btn btn--ghost" id="resetBtn">Clear form</button>
+      <button type="submit" class="btn btn--primary">Submit lead</button>
+    </div>
+  </form>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
