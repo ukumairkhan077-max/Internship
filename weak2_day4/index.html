@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+
+        <!-- SIDEBAR -->
+        <div id="sidebar">
+            <div id="logo">
+                <span class="logo-icon">&#9632;</span>
+                <span>CRM</span>
+            </div>
+
+            <nav id="nav-list">
+                <a href="#" class="sidebar-item active">
+                    <img src="home.png" alt="">
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <img src="profile.png" alt="">
+                    <span>Leads</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <img src="contact.png" alt="">
+                    <span>Contacts</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <img src="profile.png" alt="">
+                    <span>Accounts</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <img src="dollar.png" alt="">
+                    <span>Deals</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <img src="tasks.png" alt="">
+                    <span>Tasks</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <img src="calender.png" alt="">
+                    <span>Calendar</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <img src="reports.png" alt="">
+                    <span>Reports</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <img src="setting.png" alt="">
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div id="sidebar-footer">
+                <img src="profile.png" id="sidebar-avatar" alt="">
+                <button id="edit-btn">Edit</button>
+            </div>
+        </div>
+
+        <!-- MAIN -->
+        <div id="main">
+
+            <!-- HEADER -->
+            <div id="header">
+                <div id="first">
+                    <button id="menu-toggle">&#9776;</button>
+                    <div id="search-box">
+                        <img src="search.png" alt="" width="16">
+                        <input type="text" placeholder="Search..." aria-label="search area" />
+                    </div>
+                </div>
+                <div id="two">
+                    <div class="icon-badge">
+                        <img src="notification.png" alt="notification" />
+                        <span class="badge">7</span>
+                    </div>
+                    <div class="icon-badge">
+                        <img src="email.png" alt="email" />
+                        <span class="badge">5</span>
+                    </div>
+                    <div id="user-block">
+                        <img src="profile.png" id="profile" alt="profile" />
+                        <div id="user-text">
+                            <p class="user-name">John Doe</p>
+                            <p class="user-role">Sales Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE HEADING -->
+            <div id="page-heading">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Welcome back, John! Here's what's happening with your business.</p>
+                </div>
+                <button id="date-range">
+                    <img src="calender.png" alt="" width="14">
+                    May 12, 2024 - May 18, 2024
+                    <span class="chevron">&#9662;</span>
+                </button>
+            </div>
+
+            <!-- STAT CARDS -->
+            <div id="main-content">
+                <div class="continer-main">
+                    <div class="container-main-first">
+                        <img src="leads-icon.png" alt="" class="stat-icon icon-blue" />
+                        <div class="container-main-first-detail">
+                            <p class="stat-label">Total Leads</p>
+                            <p class="stat-value">1,250</p>
+                            <span class="stat-delta up">&#9650; 12.5% from last week</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continer-main">
+                    <div class="container-main-first">
+                        <img src="contacts-icon.png" alt="" class="stat-icon icon-green" />
+                        <div class="container-main-first-detail">
+                            <p class="stat-label">Total Contacts</p>
+                            <p class="stat-value">3,420</p>
+                            <span class="stat-delta up">&#9650; 8.3% from last week</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continer-main">
+                    <div class="container-main-first">
+                        <img src="dollar.png" alt="" class="stat-icon icon-purple" />
+                        <div class="container-main-first-detail">
+                            <p class="stat-label">Open Deals</p>
+                            <p class="stat-value">85</p>
+                            <span class="stat-delta up">&#9650; 15.7% from last week</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continer-main">
+                    <div class="container-main-first">
+                        <img src="dollar.png" alt="" class="stat-icon icon-orange" />
+                        <div class="container-main-first-detail">
+                            <p class="stat-label">Total Revenue</p>
+                            <p class="stat-value">$58,750</p>
+                            <span class="stat-delta up">&#9650; 20.4% from last week</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHARTS -->
+            <div id="main-content-section2">
+                <div id="left-container">
+                    <div class="panel-head">
+                        <p>Leads Overview</p>
+                        <button class="week-btn">This Week <span class="chevron">&#9662;</span></button>
+                    </div>
+                    <div id="line-chart">
+                        <svg viewBox="0 0 560 220" preserveAspectRatio="none" id="line-svg">
+                            <line x1="0" y1="10" x2="560" y2="10" class="grid-line" />
+                            <line x1="0" y1="60" x2="560" y2="60" class="grid-line" />
+                            <line x1="0" y1="110" x2="560" y2="110" class="grid-line" />
+                            <line x1="0" y1="160" x2="560" y2="160" class="grid-line" />
+                            <line x1="0" y1="205" x2="560" y2="205" class="grid-line" />
+                            <polyline points="20,110 110,80 200,40 290,140 380,60 470,130 540,55" class="line-path" />
+                            <g class="line-dots">
+                                <circle cx="20" cy="110" r="4"></circle>
+                                <circle cx="110" cy="80" r="4"></circle>
+                                <circle cx="200" cy="40" r="4"></circle>
+                                <circle cx="290" cy="140" r="4"></circle>
+                                <circle cx="380" cy="60" r="4"></circle>
+                                <circle cx="470" cy="130" r="4"></circle>
+                                <circle cx="540" cy="55" r="4"></circle>
+                            </g>
+                        </svg>
+                        <div id="line-x-axis">
+                            <span>May 12</span><span>May 13</span><span>May 14</span><span>May 15</span><span>May 16</span><span>May 17</span><span>May 18</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="right-container">
+                    <div class="panel-head">
+                        <p>Deals by Pipeline</p>
+                        <button class="week-btn">This Week <span class="chevron">&#9662;</span></button>
+                    </div>
+                    <div id="pipeline-body">
+                        <div id="donut-wrap">
+                            <div id="donut-chart">
+                                <div id="donut-center">
+                                    <span class="donut-total">85</span>
+                                    <span class="donut-total-label">Total</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul id="pipeline-legend">
+                            <li><span class="dot dot-new"></span>New <span class="leg-num">25 (29.4%)</span></li>
+                            <li><span class="dot dot-qualification"></span>Qualification <span class="leg-num">20 (23.5%)</span></li>
+                            <li><span class="dot dot-proposal"></span>Proposal <span class="leg-num">15 (17.6%)</span></li>
+                            <li><span class="dot dot-negotiation"></span>Negotiation <span class="leg-num">15 (17.6%)</span></li>
+                            <li><span class="dot dot-won"></span>Won <span class="leg-num">10 (11.8%)</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACTIVITY TABLE -->
+            <div id="activity-table">
+                <div class="panel-head">
+                    <p>Recent Activity</p>
+                    <a href="#" class="view-all">View All Activity</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Activity</th>
+                            <th>Contact</th>
+                            <th>Account</th>
+                            <th>Type</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="activity-cell"><span class="act-icon act-call">&#128222;</span>Call with Sarah Johnson</td>
+                            <td class="link-cell">Sarah Johnson</td>
+                            <td class="link-cell">Johnson &amp; Co.</td>
+                            <td><span class="type-pill type-call">Call</span></td>
+                            <td>May 18, 2024 10:30 AM</td>
+                            <td><span class="status-pill status-completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td class="activity-cell"><span class="act-icon act-email">&#9993;</span>Follow up email</td>
+                            <td class="link-cell">Michael Brown</td>
+                            <td class="link-cell">Brown Enterprises</td>
+                            <td><span class="type-pill type-email">Email</span></td>
+                            <td>May 18, 2024 09:15 AM</td>
+                            <td><span class="status-pill status-completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td class="activity-cell"><span class="act-icon act-demo">&#128196;</span>Product Demo</td>
+                            <td class="link-cell">Emily Davis</td>
+                            <td class="link-cell">Davis Solutions</td>
+                            <td><span class="type-pill type-meeting">Meeting</span></td>
+                            <td>May 17, 2024 03:00 PM</td>
+                            <td><span class="status-pill status-scheduled">Scheduled</span></td>
+                        </tr>
+                        <tr>
+                            <td class="activity-cell"><span class="act-icon act-proposal">&#128203;</span>Send proposal</td>
+                            <td class="link-cell">David Wilson</td>
+                            <td class="link-cell">Wilson Group</td>
+                            <td><span class="type-pill type-task">Task</span></td>
+                            <td>May 17, 2024 11:45 AM</td>
+                            <td><span class="status-pill status-pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td class="activity-cell"><span class="act-icon act-call">&#128222;</span>Call with James Smith</td>
+                            <td class="link-cell">James Smith</td>
+                            <td class="link-cell">Smith LLC</td>
+                            <td><span class="type-pill type-call">Call</span></td>
+                            <td>May 16, 2024 02:30 PM</td>
+                            <td><span class="status-pill status-completed">Completed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <button id="upload-fab">&#8593;</button>
+
+    </div>
+</body>
+
+</html>
