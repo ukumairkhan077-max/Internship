@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drift — Task Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ambient background glow -->
+  <div class="glow glow--violet"></div>
+  <div class="glow glow--pink"></div>
+  <div class="noise"></div>
+
+  <div class="app">
+
+    <!-- ===== Header ===== -->
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand__mark">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+            <path d="M4 12.5 L9.5 18 L20 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="brand__text">
+          <h1>Drift</h1>
+          <p>your day, in order</p>
+        </div>
+      </div>
+      <div class="header__date" id="headerDate">—</div>
+    </header>
+
+    <!-- ===== Main layout ===== -->
+    <main class="layout">
+
+      <!-- ---- Left: Tracker card ---- -->
+      <section class="card card--tracker">
+
+        <form class="composer" id="composerForm" autocomplete="off">
+          <span class="composer__icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <input
+            type="text"
+            id="taskInput"
+            class="composer__input"
+            placeholder="What needs doing today?"
+            maxlength="140"
+          >
+          <button type="submit" class="composer__btn">
+            Add task
+          </button>
+        </form>
+
+        <div class="toolbar">
+          <div class="filters" id="filters" role="tablist">
+            <button class="filter is-active" data-filter="all" role="tab">All</button>
+            <button class="filter" data-filter="active" role="tab">Active</button>
+            <button class="filter" data-filter="completed" role="tab">Done</button>
+          </div>
+          <button class="clear-btn" id="clearCompleted">Clear done</button>
+        </div>
+
+        <ul class="task-list" id="taskList"></ul>
+
+        <div class="empty-state" id="emptyState">
+          <svg viewBox="0 0 64 64" width="52" height="52" fill="none">
+            <rect x="10" y="14" width="44" height="38" rx="8" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+            <path d="M22 32h20M22 40h13" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+            <path d="M22 24h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <p id="emptyStateText">Nothing here yet — add your first task above.</p>
+        </div>
+
+        <footer class="list-footer">
+          <span id="itemsLeft">0 tasks</span>
+        </footer>
+      </section>
+
+      <!-- ---- Right: Stats card ---- -->
+      <aside class="card card--stats">
+        <div class="stats-user">
+          <div class="stats-user__avatar">DR</div>
+          <div>
+            <h3>Today's focus</h3>
+            <p id="statsSub">No tasks yet</p>
+          </div>
+        </div>
+
+        <div class="progress-ring-wrap">
+          <svg class="progress-ring" width="164" height="164" viewBox="0 0 164 164">
+            <circle class="progress-ring__track" cx="82" cy="82" r="70"/>
+            <circle class="progress-ring__bar" id="progressBar" cx="82" cy="82" r="70"/>
+          </svg>
+          <div class="progress-ring__label">
+            <span id="progressPercent">0%</span>
+            <small>complete</small>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-pill stat-pill--total">
+            <span class="stat-pill__value" id="statTotal">0</span>
+            <span class="stat-pill__label">Total</span>
+          </div>
+          <div class="stat-pill stat-pill--active">
+            <span class="stat-pill__value" id="statActive">0</span>
+            <span class="stat-pill__label">Active</span>
+          </div>
+          <div class="stat-pill stat-pill--done">
+            <span class="stat-pill__value" id="statDone">0</span>
+            <span class="stat-pill__label">Done</span>
+          </div>
+        </div>
+
+        <div class="tip">
+          <span class="tip__dot"></span>
+          Tip: click a task's circle to mark it done.
+        </div>
+      </aside>
+
+    </main>
+  </div>
+
+  <!-- task item template -->
+  <template id="taskItemTemplate">
+    <li class="task" data-id="">
+      <button class="task__toggle" type="button" aria-label="Toggle complete">
+        <span class="task__toggle-dot"></span>
+        <svg class="task__check" viewBox="0 0 16 16" width="11" height="11" fill="none">
+          <path d="M3 8.5 6.2 12 13 4" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="task__body">
+        <p class="task__text"></p>
+        <span class="task__time"></span>
+      </div>
+      <button class="task__delete" type="button" aria-label="Delete task">
+        <svg viewBox="0 0 20 20" width="15" height="15" fill="none">
+          <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
