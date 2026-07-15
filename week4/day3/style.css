@@ -1,0 +1,152 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.overlay{
+
+    width:100%;
+    min-height:100vh;
+    padding:50px;
+}
+
+h1{
+
+    color:white;
+    text-align:center;
+    font-size:50px;
+    margin-bottom:40px;
+    letter-spacing:2px;
+    text-shadow:0 5px 20px black;
+}
+
+#container{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+
+    width:300px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    color:white;
+
+    transition:.4s;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.card:hover{
+
+    transform:translateY(-10px) scale(1.05);
+
+    box-shadow:0 20px 40px rgba(0,255,255,.4);
+
+}
+
+.card h2{
+
+    margin-bottom:15px;
+    color:#00ffe7;
+}
+
+.card p{
+
+    margin:10px 0;
+    font-size:16px;
+}
+
+.error-card{
+
+    width:450px;
+
+    padding:35px;
+
+    text-align:center;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.4);
+
+}
+
+.error-card h2{
+
+    color:#ff2d55;
+    margin-bottom:20px;
+}
+
+.error-card p{
+
+    margin:12px;
+    color:#444;
+}
+
+.error-card button{
+
+    margin-top:20px;
+
+    padding:12px 28px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:linear-gradient(45deg,#ff416c,#ff4b2b);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+.error-card button:hover{
+
+    transform:scale(1.08);
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:35px;
+    }
+
+    .card{
+        width:90%;
+    }
+
+}
