@@ -1,36 +1,131 @@
+/* ===========================
+   CSS RESET
+=========================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ===========================
+   CSS VARIABLES
+=========================== */
+
+:root {
+  --bg-color: #f4f7fc;
+  --text-color: #222;
+  --card-color: #ffffff;
+  --input-bg: #ffffff;
+  --border-color: #cccccc;
+  --primary-color: #0d6efd;
+  --primary-hover: #0b5ed7;
+  --shadow: rgba(0, 0, 0, 0.15);
+}
+
+body.light {
+  --bg-color: #f4f7fc;
+  --text-color: #222;
+  --card-color: #ffffff;
+  --input-bg: #ffffff;
+  --border-color: #cccccc;
+  --primary-color: #0d6efd;
+  --primary-hover: #0b5ed7;
+  --shadow: rgba(0, 0, 0, 0.15);
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --card-color: #1f1f1f;
+  --input-bg: #2a2a2a;
+  --border-color: #555;
+  --primary-color: #3b82f6;
+  --primary-hover: #2563eb;
+  --shadow: rgba(255, 255, 255, 0.08);
+}
+
+/* ===========================
+   BODY
+=========================== */
+
 body,
 #root {
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f4f7fc;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s ease;
 }
 
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar {
+  height: 70px;
+  background: var(--card-color);
+  color: var(--text-color);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 40px;
+
+  box-shadow: 0 3px 12px var(--shadow);
+}
+
+.navbar h2 {
+  margin: 0;
+}
+
+.theme-btn {
+  width: auto;
+  padding: 10px 18px;
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
 .container {
-  min-height: 100vh;
+  min-height: calc(100vh - 70px);
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  padding: 30px;
 }
+
+/* ===========================
+   FORM
+=========================== */
 
 form {
   width: 420px;
-  background: #fff;
+
+  background: var(--card-color);
+
   padding: 30px;
+
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+  box-shadow: 0 10px 25px var(--shadow);
+
+  transition: 0.3s;
 }
 
 h2 {
   text-align: center;
   margin-bottom: 25px;
-  color: #333;
+  color: var(--text-color);
 }
+
+/* ===========================
+   INPUTS
+=========================== */
 
 .form-group {
   margin-bottom: 18px;
@@ -39,24 +134,37 @@ h2 {
 label {
   display: block;
   margin-bottom: 6px;
+
   font-size: 15px;
   font-weight: 600;
-  color: #444;
+
+  color: var(--text-color);
 }
 
 input,
 textarea {
   width: 100%;
+
   padding: 12px;
-  border: 1px solid #ccc;
+
+  border: 1px solid var(--border-color);
+
   border-radius: 6px;
+
   font-size: 15px;
+
   outline: none;
+
+  background: var(--input-bg);
+
+  color: var(--text-color);
+
+  transition: 0.3s;
 }
 
 input:focus,
 textarea:focus {
-  border-color: #0d6efd;
+  border-color: var(--primary-color);
 }
 
 textarea {
@@ -64,17 +172,30 @@ textarea {
   resize: vertical;
 }
 
+/* ===========================
+   BUTTONS
+=========================== */
+
 button {
   width: 100%;
+
   padding: 12px;
-  background: #0d6efd;
+
+  background: var(--primary-color);
+
   color: white;
+
   border: none;
+
   border-radius: 6px;
+
   font-size: 16px;
+
   cursor: pointer;
+
+  transition: 0.3s;
 }
 
 button:hover {
-  background: #0b5ed7;
+  background: var(--primary-hover);
 }
