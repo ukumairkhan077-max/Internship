@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0a0a10;
+  --bg-soft: #111018;
+  --surface: #16151f;
+  --surface-2: #1c1a28;
+  --border: rgba(255, 255, 255, 0.09);
+  --text: #f1f0f6;
+  --text-muted: #9b98ac;
+  --accent: #c8ff4d;
+  --accent-dim: #9fe62e;
+  --accent-ink: #10130a;
+  --violet: #7c5cff;
+  --violet-soft: #2c2350;
+  --radius-lg: 22px;
+  --radius-md: 14px;
+  --radius-sm: 8px;
+  --shadow-lift: 0 20px 60px -20px rgba(0, 0, 0, 0.6);
+}
+
+html.light {
+  --bg: #f7f6f2;
+  --bg-soft: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #eeece4;
+  --border: rgba(10, 10, 16, 0.1);
+  --text: #14131c;
+  --text-muted: #5c596b;
+  --accent: #6f9c00;
+  --accent-dim: #5a7f00;
+  --accent-ink: #f7ffe0;
+  --violet: #5a3fe0;
+  --violet-soft: #e4defb;
+  --shadow-lift: 0 20px 50px -25px rgba(20, 19, 28, 0.25);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.font-display {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 8px; }
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(1deg); }
+}
+.animate-floaty { animation: floaty 6s ease-in-out infinite; }
+
+@keyframes aurora-drift {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(3%, -4%) scale(1.08); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+.animate-aurora { animation: aurora-drift 14s ease-in-out infinite; }
+
+@keyframes blink-caret {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.animate-caret { animation: blink-caret 1s step-end infinite; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 26s linear infinite; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-floaty, .animate-aurora, .animate-caret, .animate-marquee { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}

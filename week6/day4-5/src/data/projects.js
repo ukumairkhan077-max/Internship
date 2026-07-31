@@ -1,0 +1,98 @@
+const projects = [
+  {
+    id: "rabbit-store",
+    slug: "rabbit-store",
+    name: "Rabbit Store",
+    tagline: "Full-stack fashion e-commerce with a real checkout flow.",
+    category: "E-Commerce",
+    year: "2026",
+    stack: ["React", "Vite", "Node.js", "Express", "MongoDB", "JazzCash / Easypaisa"],
+    description:
+      "A complete MERN e-commerce platform for a fashion brand: product catalog with color, size and category filters, a persistent cart drawer, a multi-step checkout, and an admin dashboard for managing products and orders. Local payment gateways (JazzCash / Easypaisa) were integrated in place of PayPal, which isn't available in my region.",
+    highlights: [
+      "Filterable men's & women's collections with live search and sort",
+      "Cart drawer + full checkout flow with order summary",
+      "Admin panel for products, inventory and order status",
+      "Deployed on Vercel (API) and GitHub Pages (client)",
+    ],
+    images: [
+      "/images/ecom-hero.png",
+      "/images/ecom-men.png",
+      "/images/ecom-women.png",
+      "/images/ecom-product.png",
+    ],
+    liveUrl: "#",
+    codeUrl: "#",
+    accent: "#c8ff4d",
+  },
+  {
+    id: "wanderstay",
+    slug: "wanderstay",
+    name: "WanderStay",
+    tagline: "An Airbnb-style stays & experiences marketplace.",
+    category: "Travel Agency",
+    year: "2026",
+    stack: ["React", "Node.js", "Express", "MongoDB", "REST API"],
+    description:
+      "A travel booking clone covering the full guest journey: browsing homes and experiences, filtering by city, viewing a detailed listing with photo gallery, booking dates, and managing a guest profile. Built to practice complex nested layouts, dynamic routing per listing, and multi-role UI states (guest vs. host).",
+    highlights: [
+      "Home / Experiences / Services tabs with location-based results",
+      "Rich listing detail pages with photo gallery & host info",
+      "Guest profile with past trips and connections",
+      "Reusable card + carousel components across the catalog",
+    ],
+    images: [
+      "/images/travel-home.png",
+      "/images/travel-services.png",
+      "/images/travel-detail.png",
+      "/images/travel-profile.png",
+    ],
+    liveUrl: "#",
+    codeUrl: "#",
+    accent: "#7c5cff",
+  },
+  {
+    id: "nexus",
+    slug: "nexus",
+    name: "Nexus",
+    tagline: "Real-time collaboration platform for investors & founders.",
+    category: "MERN / Real-time",
+    year: "2025",
+    stack: ["React", "Redux Toolkit", "Socket.IO", "WebRTC", "MongoDB Atlas"],
+    description:
+      "A collaboration platform connecting entrepreneurs with investors: live chat over Socket.IO, WebRTC video calls, a canvas-based e-signature flow for term sheets, and centralized state via Redux Toolkit across a ~60-file client.",
+    highlights: [
+      "Real-time messaging with Socket.IO",
+      "Peer-to-peer video calls with WebRTC",
+      "Canvas e-signature capture for agreements",
+      "Redux Toolkit state across a large component tree",
+    ],
+    images: [],
+    liveUrl: "#",
+    codeUrl: "#",
+    accent: "#ff9f4d",
+  },
+  {
+    id: "careerai",
+    slug: "careerai",
+    name: "CareerAI",
+    tagline: "Desktop ML app that recommends careers from your profile.",
+    category: "AI / Machine Learning",
+    year: "2025",
+    stack: ["Python", "CustomTkinter", "scikit-learn", "SQLite", "ReportLab"],
+    description:
+      "A desktop application built with CustomTkinter that runs five ML classifiers over a synthetic career dataset to recommend paths, then generates a polished PDF report and stores history locally in SQLite.",
+    highlights: [
+      "Five classical ML classifiers compared side-by-side",
+      "Synthetic dataset generation for training",
+      "Auto-generated PDF reports with ReportLab",
+      "Local history stored in SQLite",
+    ],
+    images: [],
+    liveUrl: "#",
+    codeUrl: "#",
+    accent: "#4dd0ff",
+  },
+];
+
+export default projects;
